@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#f5f6f8"
+
+    android:layout_height="wrap_content">
+
+    <!--     android:background="#f5f6f8" -->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_weight="3">
+            <ImageView
+                android:id="@+id/stylist_image"
+                android:layout_width="100dp"
+                android:src="@drawable/image"
+                android:layout_height="100dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical|left"
+            android:weightSum="10"
+            android:paddingLeft="10dp"
+            android:paddingRight="8dp"
+            android:layout_weight="7">
+            <TextView
+                android:id="@+id/stylist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/headings"
+                android:textStyle="bold"
+                android:text="John Peter"/>
+            <TextView
+                android:id="@+id/saloon_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/location"
+                android:gravity="center_vertical"
+                android:text="John Peter"/>
+            <TextView
+                android:id="@+id/appointment_timings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="you r appointment will begin between 6pm to 7 pm on 4th oct ,15"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- *************** 2nd part **************************** -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/dark_grey"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="3"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_weight="1">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="Facial"/>
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:text="Aroma gold fruit"/>
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:text="$ 500"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

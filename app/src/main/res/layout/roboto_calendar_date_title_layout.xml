@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/frwd_arrow" />
+        android:src="@drawable/back_arrow" />
 
      <robotocalendar.font.RobotoTextView
         android:id="@+id/dateTitle"
