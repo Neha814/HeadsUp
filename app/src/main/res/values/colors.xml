@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e94c3d</color>
+    <color name="colorPrimaryDark">#c43122</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#e94c3d</color>
+
+    <color name="red">#e94c3d</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="light_grey">#b9b9b9</color>
+    <color name="dark_red">#c43122</color>
+    <color name="dark_grey">#586877</color>
+    <color name="grey_light">#dcdcdc</color>
+
+    <!-- Fonts -->
+    <color name="monthTitleColor">#e94c3d</color>
+    <color name="dayOfWeekColor">#e94c3d</color>
+    <color name="dayOfMonthColor">#808080</color>
+    <color name="currentDayOfMonthColor">#33b5e5</color>
+    <color name="currentDayOfMonthSelectorColor">#e94c3d</color>
+    <color name="calendarBackgroundColor">#FFFFFF</color>
+    <color name="back_color">#9d9e9f</color>
+
+</resources>

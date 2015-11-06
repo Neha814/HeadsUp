@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Headsup</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_id">1513712528949226</string>
+    <string name="rating_revies">Rating &amp; Reviews</string>
+    <string name="invite">Invite &amp; earn</string>
+
+    <string name="monthTitleFont">roboto_light</string>
+    <string name="dayOfWeekFont">roboto_regular</string>
+    <string name="dayOfMonthFont">roboto_light</string>
+    <string name="currentDayOfMonthFont">roboto_light</string>
+
+</resources>

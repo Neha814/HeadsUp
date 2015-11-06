@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:layout_weight="1.3">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointment Details"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/headings"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:layout_weight="7.1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:background="@color/dark_grey">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:weightSum="10"
+                android:layout_weight="4">
+                <ImageView
+                    android:id="@+id/stylist_image"
+                    android:layout_width="100dp"
+                    android:src="@drawable/image"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical|left"
+                android:weightSum="10"
+               android:paddingRight="8dp"
+                android:layout_weight="6">
+                <TextView
+                    android:id="@+id/stylist_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/headings"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="John Peter"/>
+                <TextView
+                    android:id="@+id/saloon_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:drawableLeft="@drawable/location"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:text="John Peter"/>
+                <TextView
+                    android:id="@+id/appointment_timings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="you r appointment will begin between 6pm to 7 pm on 4th oct ,15"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/headings"
+                android:drawableLeft="@drawable/services"
+                android:gravity="center"
+                android:drawablePadding="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:text="Selected Services"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:weightSum="10"
+            android:paddingTop="15dp"
+            android:orientation="horizontal"
+     >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:gravity="center_vertical|top"
+                android:layout_weight="2">
+
+                <ImageView
+                    android:id="@+id/grey_icon"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/location"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:paddingRight="8dp"
+                android:gravity="center_vertical|left|top"
+                android:layout_weight="5">
+
+                <TextView
+                    android:id="@+id/cat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/headings"
+                    android:textStyle="bold"
+                    android:textColor="@color/red"
+                    android:text="Facvial"/>
+                <TextView
+                    android:id="@+id/service_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/dark_grey"
+                    android:text="Aroma gold fruit"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/red"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:text="$ 6000"/>
+
+                <TextView
+                    android:id="@+id/remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/white"
+                    android:text="remove"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_weight="1.8">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_weight="6">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/headings"
+                android:text="Total amount payable"/>
+
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/headings"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:text="$ 240"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pay_now_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_weight="4">
+
+            <TextView
+                android:id="@+id/pay_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/headings"
+               android:drawableTop="@drawable/pay_now"
+                android:textColor="@color/white"
+                android:text="Pay Now"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
