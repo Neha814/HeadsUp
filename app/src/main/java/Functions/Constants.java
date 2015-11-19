@@ -28,6 +28,7 @@ public class Constants {
     public static String USERNAME_REGISTER="" ;
     public static String EMAIL;
     public static String PROFILE_PIC;
+    public static String USER_PROMO_CODE;
 
 
     public static String PERSON_NAME_FB_GOOGLE;

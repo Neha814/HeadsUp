@@ -51,7 +51,7 @@
                 android:text="Share your invite code"
                 android:textAllCaps="true"/>
             <TextView
-
+                android:id="@+id/promo_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/dark_grey"
@@ -100,6 +100,7 @@
                 android:layout_weight="1">
 
                 <ImageView
+                    android:id="@+id/message_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/live_chat"/>
@@ -113,6 +114,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/gmail_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/message_envelop"/>
@@ -127,6 +129,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/facebook_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/fb_socialicon"/>
@@ -141,6 +144,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/whatsapp_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/twitter"/>

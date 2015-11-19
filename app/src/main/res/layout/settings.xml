@@ -59,6 +59,38 @@
                 android:layout_alignParentRight="true"
                 android:src="@drawable/frwd_arrow"/>
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/edit_profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/fullname"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_profile"
+                android:text="Edit Profile"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/headings"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/img2"/>
+
+            <ImageView
+                android:id="@+id/edit_profile_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/frwd_arrow"/>
+        </RelativeLayout>
         </LinearLayout>
 
 </LinearLayout>

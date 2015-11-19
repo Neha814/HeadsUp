@@ -43,6 +43,7 @@ public class Functions {
                 localHashMap.put("user_name", result.getString("user_name"));
                 localHashMap.put("user_email", result.getString("user_email"));
                 localHashMap.put("user_type",result.getString("user_type"));
+                localHashMap.put("user_promo_code",result.getString("user_promo_code"));
 
             } else {
                 localHashMap.put("Response", "false");
@@ -85,6 +86,7 @@ public class Functions {
                 localHashMap.put("user_email", result.getString("user_email"));
                 localHashMap.put("user_type",result.getString("user_type"));
                 localHashMap.put("profile_image",result.getString("profile_image"));
+                localHashMap.put("user_promo_code",result.getString("user_promo_code"));
 
 
             } else {
@@ -316,6 +318,135 @@ public class Functions {
         } catch (Exception ae) {
             ae.printStackTrace();
             return localHashMap;
+
+        }
+
+    }
+
+    /**
+     * API for booking schedule
+     * @param localArrayList
+     * @return
+     */
+
+    public HashMap bookSchedule(ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> locallist = new ArrayList<HashMap<String, String>>();
+        @SuppressWarnings("rawtypes")
+        HashMap<String, String> localHashMap = new HashMap<String, String>();
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "bookingschedule.php?", "POST",
+                            localArrayList)).toString());
+
+            String status = localJSONObject.getString("Response");
+            if (status.equalsIgnoreCase("true")) {
+                localHashMap.put("Response", "true");
+                localHashMap.put("Message", localJSONObject.getString("Message"));
+
+            } else {
+                localHashMap.put("Response", "false");
+                localHashMap.put("Message", localJSONObject.getString("Message"));
+            }
+            return localHashMap;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localHashMap;
+
+        }
+
+    }
+
+    /**
+     * Stylist appointment listing
+     * @param localArrayList
+     * @return
+     */
+
+    public ArrayList<HashMap<String, String>> myApptList(
+            ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> localArrayList1 = new ArrayList<HashMap<String, String>>();
+
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "viewBookingschedule.php?",
+                            "POST", localArrayList)).toString());
+
+            String resopnse = localJSONObject.getString("Response");
+            if (resopnse.equalsIgnoreCase("true")) {
+
+                JSONArray Data = localJSONObject.getJSONArray("Result");
+                for (int i = 0; i < Data.length(); i++) {
+                    HashMap<String, String> localhashMap = new HashMap<String, String>();
+
+                    localhashMap.put("id", Data.getJSONObject(i).getString("id"));
+                    localhashMap.put("user_id", Data.getJSONObject(i).getString("user_id"));
+                    localhashMap.put("barber_id", Data.getJSONObject(i).getString("barber_id"));
+                    localhashMap.put("from_time", Data.getJSONObject(i).getString("from_time"));
+                    localhashMap.put("to_time", Data.getJSONObject(i).getString("to_time"));
+                    localhashMap.put("slot_date", Data.getJSONObject(i).getString("slot_date"));
+                    localhashMap.put("amount", Data.getJSONObject(i).getString("amount"));
+                    localhashMap.put("offer_used", Data.getJSONObject(i).getString("offer_used"));
+                    localhashMap.put("display_name", Data.getJSONObject(i).getString("display_name"));
+                    localhashMap.put("profile_image", Data.getJSONObject(i).getString("profile_image"));
+
+
+                    localArrayList1.add(localhashMap);
+
+                }
+
+            }
+            return localArrayList1;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localArrayList1;
+
+        }
+
+    }
+
+    /**
+     * Friend LISt
+     * @param localArrayList
+     * @return
+     */
+
+    public ArrayList<HashMap<String, String>> friendList(
+            ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> localArrayList1 = new ArrayList<HashMap<String, String>>();
+
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "chatList.php?",
+                            "POST", localArrayList)).toString());
+
+            String resopnse = localJSONObject.getString("Response");
+            if (resopnse.equalsIgnoreCase("true")) {
+
+                JSONArray Data = localJSONObject.getJSONArray("Result");
+                for (int i = 0; i < Data.length(); i++) {
+                    HashMap<String, String> localhashMap = new HashMap<String, String>();
+
+                    localhashMap.put("id", Data.getJSONObject(i).getString("id"));
+                    localhashMap.put("user_id", Data.getJSONObject(i).getString("user_id"));
+                    localhashMap.put("display_name", Data.getJSONObject(i).getString("display_name"));
+                    localhashMap.put("profile_image", Data.getJSONObject(i).getString("profile_image"));
+
+
+                    localArrayList1.add(localhashMap);
+
+                }
+
+            }
+            return localArrayList1;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localArrayList1;
 
         }
 

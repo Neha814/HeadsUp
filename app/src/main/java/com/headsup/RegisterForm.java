@@ -231,12 +231,14 @@ public class RegisterForm extends Activity implements View.OnClickListener {
                     e.putString("user_email", (String) result.get("user_email"));
                     e.putString("user_name", (String) result.get("user_name"));
                     e.putString("user_type",(String) result.get("user_type"));
+                    e.putString("user_promo_code" , (String) result.get("user_promo_code"));
 
                     e.commit();
                     Constants.USER_ID = sp.getString("user_id","");
                     Constants.USERNAME_REGISTER = this.uSERNAME;
                     Constants.EMAIL = sp.getString("user_email","");
                     Constants.USER_TYPE = sp.getString("user_type","");
+                    Constants.USER_PROMO_CODE = sp.getString("user_promo_code","");
 
                     Log.e("user_type(regster)", "" + Constants.USER_TYPE);
 

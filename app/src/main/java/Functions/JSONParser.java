@@ -52,7 +52,8 @@ public class JSONParser {
 
 		HttpClient httpclient = new DefaultHttpClient();
 
-        //HttpClient httpclient = createHttpClient();
+
+		//  HttpClient httpclient = createHttpClient();
 
         HttpPost httppost = new HttpPost(url);
 

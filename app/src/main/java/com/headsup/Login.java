@@ -255,7 +255,12 @@ public class Login extends Activity implements View.OnClickListener , Connection
         }else {
             if (isConnected) {
 
-                new LoginTask("",email_text, password_text).execute(new Void[0]);
+                try {
+                    new LoginTask("",email_text, password_text).execute(new Void[0]);
+                }  catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ;
             } else {
                 StringUtils.showDialog(Constants.No_INTERNET, Login.this);
             }
@@ -288,8 +293,11 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     //    new RegisterTask(name, email, "" ).execute(new Void[0]);
 
                         LoginManager.getInstance().logOut();
-
+                    try {
                         new LoginTask(name,email, "").execute(new Void[0]);
+                    }  catch (Exception e) {
+                        e.printStackTrace();
+                    };
 
                         Log.e("profile==>>",""+profile);
                         Log.e("name==>>",""+name);
@@ -365,6 +373,7 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     e.putString("user_name", (String) result.get("user_name"));
                     e.putString("user_type",(String) result.get("user_type"));
                     e.putString("profile_image", (String) result.get("profile_image"));
+                    e.putString("user_promo_code" , (String) result.get("user_promo_code"));
 
                     e.commit();
 
@@ -373,6 +382,7 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     Constants.EMAIL = sp.getString("user_email","");
                     Constants.USER_TYPE = sp.getString("user_type","");
                     Constants.PROFILE_PIC =  sp.getString("profile_image","");
+                    Constants.USER_PROMO_CODE = sp.getString("user_promo_code","");
 
                     Toast.makeText(getApplicationContext(), "login successfully.", Toast.LENGTH_SHORT).show();
                     if( Constants.USER_TYPE.equalsIgnoreCase("user")) {
@@ -484,6 +494,7 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     e.putString("user_email", (String) result.get("user_email"));
                     e.putString("user_name", (String) result.get("user_name"));
                     e.putString("user_type",(String) result.get("user_type"));
+                    e.putString("user_promo_code" , (String) result.get("user_promo_code"));
 
                     e.commit();
 
@@ -491,6 +502,7 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     Constants.USERNAME_REGISTER = this.uSERNAME;
                     Constants.EMAIL = sp.getString("user_email","");
                     Constants.USER_TYPE = sp.getString("user_type","");
+                    Constants.USER_PROMO_CODE = sp.getString("user_promo_code","");
 
                     Toast.makeText(getApplicationContext(),"Register successfully.",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(Login.this , FillProfile.class);
@@ -624,8 +636,11 @@ public class Login extends Activity implements View.OnClickListener , Connection
                     Constants.FB_GOOGLE_PRO_PIC_URL = personPhotoUrl;
 
                     Constants.IS_COMING_FROM_FB_GOOGLE = true;
-
+                    try {
                     new LoginTask(personName,email, "").execute(new Void[0]);
+                }  catch (Exception e) {
+                    e.printStackTrace();
+                };
 
                   //  new RegisterTask(personName, email, "" ).execute(new Void[0]);
 
