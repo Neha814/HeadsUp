@@ -9,6 +9,7 @@
             android:id="@+id/user_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:visibility="gone"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/image"/>

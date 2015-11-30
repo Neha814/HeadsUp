@@ -435,7 +435,132 @@ public class Functions {
                     localhashMap.put("user_id", Data.getJSONObject(i).getString("user_id"));
                     localhashMap.put("display_name", Data.getJSONObject(i).getString("display_name"));
                     localhashMap.put("profile_image", Data.getJSONObject(i).getString("profile_image"));
+                    localhashMap.put("barber_id", Data.getJSONObject(i).getString("barber_id"));
 
+
+                    localArrayList1.add(localhashMap);
+
+                }
+
+            }
+            return localArrayList1;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localArrayList1;
+
+        }
+
+    }
+
+    /**
+     * load previous messages
+     * @param localArrayList
+     * @return
+     */
+
+
+    public ArrayList<HashMap<String, String>> PreviousMessage(
+            ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> localArrayList1 = new ArrayList<HashMap<String, String>>();
+
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "chat.php?",
+                            "POST", localArrayList)).toString());
+
+            String resopnse = localJSONObject.getString("Response");
+            if (resopnse.equalsIgnoreCase("true")) {
+                    Constants.MESSAGE_RESPONSE = "true";
+                JSONArray Data = localJSONObject.getJSONArray("results");
+                for (int i = 0; i < Data.length(); i++) {
+                    HashMap<String, String> localhashMap = new HashMap<String, String>();
+
+                    localhashMap.put("id", Data.getJSONObject(i).getString("id"));
+                    localhashMap.put("from_id", Data.getJSONObject(i).getString("from_id"));
+                    localhashMap.put("to_id", Data.getJSONObject(i).getString("to_id"));
+                    localhashMap.put("message", Data.getJSONObject(i).getString("message"));
+                    localhashMap.put("created", Data.getJSONObject(i).getString("created"));
+
+                    localArrayList1.add(localhashMap);
+
+                }
+
+            } else {
+                Constants.MESSAGE_RESPONSE = "false";
+            }
+            return localArrayList1;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localArrayList1;
+
+        }
+
+    }
+
+    /**
+     * Add package
+     * @param localArrayList
+     * @return
+     */
+
+    public HashMap AddPackgae(ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> locallist = new ArrayList<HashMap<String, String>>();
+        @SuppressWarnings("rawtypes")
+        HashMap<String, String> localHashMap = new HashMap<String, String>();
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "addPackage.php?", "POST",
+                            localArrayList)).toString());
+
+            String status = localJSONObject.getString("Response");
+            if (status.equalsIgnoreCase("true")) {
+                localHashMap.put("Response", "true");
+                localHashMap.put("Message", localJSONObject.getString("Message"));
+
+
+            } else {
+                localHashMap.put("Response", "false");
+                localHashMap.put("Message", localJSONObject.getString("Message"));
+            }
+            return localHashMap;
+
+        } catch (Exception ae) {
+            ae.printStackTrace();
+            return localHashMap;
+
+        }
+
+    }
+
+    /**
+     * Gallery Listing
+     */
+
+    public ArrayList<HashMap<String, String>> myGallery(
+            ArrayList localArrayList) {
+        ArrayList<HashMap<String, String>> localArrayList1 = new ArrayList<HashMap<String, String>>();
+
+        try {
+
+            JSONObject localJSONObject = new JSONObject(Html.fromHtml(
+                    this.json.makeHttpRequest(url + "userImageList.php?",
+                            "POST", localArrayList)).toString());
+
+            String resopnse = localJSONObject.getString("Response");
+            if (resopnse.equalsIgnoreCase("true")) {
+
+                JSONArray Data = localJSONObject.getJSONArray("Images");
+                for (int i = 0; i < Data.length(); i++) {
+                    HashMap<String, String> localhashMap = new HashMap<String, String>();
+
+                    localhashMap.put("id", Data.getJSONObject(i).getString("id"));
+                    localhashMap.put("user_id", Data.getJSONObject(i).getString("user_id"));
+                    localhashMap.put("user_image", Data.getJSONObject(i).getString("user_image"));
+                    localhashMap.put("date_created", Data.getJSONObject(i).getString("date_created"));
 
                     localArrayList1.add(localhashMap);
 

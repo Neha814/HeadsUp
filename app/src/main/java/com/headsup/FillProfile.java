@@ -210,6 +210,9 @@ public class FillProfile extends FragmentActivity implements View.OnClickListene
                 client.addFormPart("zip", Constants.ZIPCODE);
                 client.addFormPart("barber_type", "");
 
+                Log.e("bitmap==>", "" + Constants.BITMAP_TO_SEND);
+                Log.e("file==>",""+Constants.FILE_TO_SEND);
+
                 if (!(Constants.FILE_TO_SEND.getName().equals("") || Constants.FILE_TO_SEND
                         .getName() == null)) {
 

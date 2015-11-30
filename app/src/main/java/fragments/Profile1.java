@@ -114,7 +114,7 @@ public class Profile1 extends Fragment {
 
     private void ConvertBitmapToFile(Bitmap result) {
         try {
-            imgFileGallery = new File(getActivity().getCacheDir(), "profile_pic");
+            imgFileGallery = new File(getActivity().getCacheDir(), "profile_pic.png");
             imgFileGallery.createNewFile();
 
             //Convert bitmap to byte array

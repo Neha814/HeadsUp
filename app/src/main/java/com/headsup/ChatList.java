@@ -2,11 +2,13 @@ package com.headsup;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -57,6 +59,28 @@ public class ChatList extends Activity {
         } else {
             StringUtils.showDialog(Constants.No_INTERNET, getApplicationContext());
         }
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Constants.SENDER_ID = Constants.USER_ID;
+                Constants.SENDER_NAME = Constants.USER_NAME;
+                Constants.SENDER_PIC = Constants.PROFILE_PIC;
+
+                if(Constants.USER_TYPE.equalsIgnoreCase("user")){
+                    Constants.RECEIVER_ID = FriendList.get(i).get("barber_id");
+                } else {
+                    Constants.RECEIVER_ID = FriendList.get(i).get("user_id");
+                }
+
+
+                Constants.RECEIVER_NAME = FriendList.get(i).get("display_name");
+                Constants.RECEIVER_PIC = FriendList.get(i).get("profile_image");
+
+                Intent intent = new Intent(ChatList.this , ChatScreen.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public class FriendList extends AsyncTask<Void, Void, Void> {
@@ -170,6 +194,8 @@ public class ChatList extends Activity {
             holder.user_name.setText(FriendList.get(position).get("display_name"));
             String profile_url = FriendList.get(position).get("profile_image");
             imageLoader.DisplayImage(profile_url, R.drawable.noimg, holder.user_image);
+
+
 
             return convertView;
         }

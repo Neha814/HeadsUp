@@ -62,6 +62,9 @@ public class Constants {
     public static String SELECTED_CAT_ICON_URL;
     public static String SELECTED_CAT_GREYICON_URL;
 
+    // stylist
+    public static String SELECTED_CAT_ID;
+
     //******** Service Type ********************//
 
     public static String SERVICE_TYPE_NAME;
@@ -80,5 +83,23 @@ public class Constants {
     public static String DATE_TO_SEND;
     public static String DATE_TO_SHOW;
     public static String BOOKED_TIME_SLOT;
+
+    // ************* Chat screen **********************//
+
+    public static String SENDER_NAME ;
+    public static String SENDER_ID ;
+    public static String SENDER_PIC ;
+    public static String RECEIVER_NAME ;
+    public static String RECEIVER_ID ;
+    public static String RECEIVER_PIC ;
+    public static String MESSAGE ;
+
+    public static String MESSAGE_RESPONSE ;
+
+    // ************ gallery screen **********************//
+
+    public static String IMAGE_URL_TO_SHARE ;
+
+
 
 }

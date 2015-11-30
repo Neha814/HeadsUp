@@ -23,5 +23,10 @@
     <color name="currentDayOfMonthSelectorColor">#e94c3d</color>
     <color name="calendarBackgroundColor">#FFFFFF</color>
     <color name="back_color">#9d9e9f</color>
+    <color name="light_blue">#6f8395</color>
+
+
+    <color name="chat_light_blue">#a4b0bc</color>
+    <color name="chat_light_red">#f18c83</color>
 
 </resources>

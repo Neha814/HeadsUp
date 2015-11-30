@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 import Functions.Constants;
 import Functions.Functions;
-import fragments.HomeStylistFragment;
+import fragments.StylistServicesFragments;
 import imageLoader.ImageLoader;
 import utils.StringUtils;
 import utils.TransparentProgressDialog;
@@ -87,7 +87,8 @@ public class HomeStylist extends FragmentActivity implements View.OnClickListene
         FragmentManager fm  = HomeStylist.this.getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         Fragment fragment = null;
-        fragment = new HomeStylistFragment();
+      //  fragment = new HomeStylistFragment();
+        fragment = new StylistServicesFragments();
         ft.replace(R.id.frame_layout, fragment);
         ft.addToBackStack(null);
         ft.commit();
@@ -109,8 +110,9 @@ public class HomeStylist extends FragmentActivity implements View.OnClickListene
         LinearLayout cancel_layout , home_layout;
         ImageView cancel_img ,home_img;
         TextView user_name;
-        RelativeLayout setting_layout ,logout_layout,invite_layout,about_laoyut,rating_layout,chat_layout;
-        ImageView setting_img , logout_img,invite_img,about_img,rating_img,profile_pic,chat_img;
+        RelativeLayout setting_layout ,logout_layout,invite_layout,about_laoyut,rating_layout,chat_layout,
+                my_appt_layout;
+        ImageView setting_img , logout_img,invite_img,about_img,rating_img,profile_pic,chat_img,my_appt_img;
 
         dialog = new Dialog(HomeStylist.this, R.style.full_screen_dialog);
         dialog.setCancelable(true);
@@ -140,6 +142,8 @@ public class HomeStylist extends FragmentActivity implements View.OnClickListene
         user_name = (TextView) dialog.findViewById(R.id.user_name);
         chat_img = (ImageView) dialog.findViewById(R.id.chat_img);
         chat_layout = (RelativeLayout) dialog.findViewById(R.id.chat_layout);
+        my_appt_img = (ImageView) dialog.findViewById(R.id.my_appt_img);
+        my_appt_layout  = (RelativeLayout) dialog.findViewById(R.id.my_aapt_layout);
 
 
         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
@@ -294,6 +298,23 @@ public class HomeStylist extends FragmentActivity implements View.OnClickListene
             public void onClick(View view) {
                 dialog.dismiss();
                 Intent i = new Intent(HomeStylist.this , ChatList.class);
+                startActivity(i);
+            }
+        });
+        my_appt_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent i = new Intent(HomeStylist.this , StylistMyAppointment.class);
+                startActivity(i);
+            }
+        });
+
+        my_appt_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent i = new Intent(HomeStylist.this , StylistMyAppointment.class);
                 startActivity(i);
             }
         });

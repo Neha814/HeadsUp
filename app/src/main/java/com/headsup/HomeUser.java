@@ -109,8 +109,10 @@ public class HomeUser extends FragmentActivity implements View.OnClickListener {
         LinearLayout cancel_layout , home_layout;
         ImageView cancel_img ,home_img;
         TextView user_name;
-        RelativeLayout setting_layout ,logout_layout,invite_layout,about_laoyut,rating_layout,chat_layout;
-        ImageView setting_img , logout_img,invite_img,about_img,rating_img,profile_pic,chat_img;
+        RelativeLayout setting_layout ,logout_layout,invite_layout,about_laoyut,rating_layout,
+                chat_layout, image_gallery_layout;
+        ImageView setting_img , logout_img,invite_img,about_img,rating_img,profile_pic,chat_img,
+                image_gallery_img;
 
         dialog = new Dialog(HomeUser.this, R.style.full_screen_dialog);
         dialog.setCancelable(true);
@@ -140,6 +142,8 @@ public class HomeUser extends FragmentActivity implements View.OnClickListener {
         user_name = (TextView) dialog.findViewById(R.id.user_name);
         chat_img = (ImageView) dialog.findViewById(R.id.chat_img);
         chat_layout = (RelativeLayout) dialog.findViewById(R.id.chat_layout);
+        image_gallery_img = (ImageView) dialog.findViewById(R.id.image_gallery_img);
+        image_gallery_layout = (RelativeLayout) dialog.findViewById(R.id.image_gallery_layout);
 
 
         dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT,
@@ -294,6 +298,23 @@ public class HomeUser extends FragmentActivity implements View.OnClickListener {
             public void onClick(View view) {
                 dialog.dismiss();
                 Intent i = new Intent(HomeUser.this , ChatList.class);
+                startActivity(i);
+            }
+        });
+        image_gallery_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent i = new Intent(HomeUser.this , GalleryUser.class);
+                startActivity(i);
+            }
+        });
+
+        image_gallery_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent i = new Intent(HomeUser.this , GalleryUser.class);
                 startActivity(i);
             }
         });
